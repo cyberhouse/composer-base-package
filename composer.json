@@ -1,0 +1,27 @@
+{
+    "name": "cyberhouse/basepackage",
+    "description": "Cyberhouse Composer Base Package",
+    "require": {
+        
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.0.*",
+        "phpdocumentor/phpdocumentor": "2.7.*",
+        "phpmd/phpmd" : "@stable"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cyberhouse\\": "src/Cyberhouse"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "doc": "vendor/bin/phpdoc",
+        "md": "tools/phpmd",
+        "pre-commit":
+        [
+            "vendor/bin/phpunit",
+            "tools/phpmd"
+        ]
+    }
+}
